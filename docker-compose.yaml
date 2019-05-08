@@ -1,0 +1,9 @@
+version: '3.5'
+services:
+  gpt2-sample:
+    build:
+      dockerfile: Dockerfile.gpu
+      shm_size: '1gb'
+    network_mode: "host"
+    volumes:
+      - /root/gpt-2/models:/gpt-2/models
