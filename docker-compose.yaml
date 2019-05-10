@@ -1,9 +1,11 @@
-version: '3.5'
+version: '2.3'
 services:
   gpt2-sample:
     build:
+      context: .
       dockerfile: Dockerfile.gpu
       shm_size: '1gb'
+    runtime: nvidia
     network_mode: "host"
     volumes:
       - /root/gpt-2/models:/gpt-2/models
